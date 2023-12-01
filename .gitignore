@@ -38,5 +38,5 @@
 *.vscode
 *.code-workspace 
 __pycache__
-*.pynb
+*.ipynb
 
