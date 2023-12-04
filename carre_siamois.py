@@ -312,4 +312,7 @@ def carre_siamois_so_pc(n : int,k : int) -> List [int]:
     
 #Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique
 def debut_carre(n,c):
-    return int((2*c - n**3 + n)/(2*n))
+    if (c >= (n**2*(n**2+1))/(2*n) and c%n == 0 ):
+        return (2*c -n**3+n)/(2*n)
+    else :
+        return 0

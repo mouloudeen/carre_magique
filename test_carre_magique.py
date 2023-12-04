@@ -87,3 +87,14 @@ print(f'Est ce un carré façons Sud-Est comme départ le milieu de la dernière
 print(f'Est ce un carré façons Sud-Est comme départ le milieu de la dernière colonne est magique : {outil_carre_magique.carre_is_magic(carre_se_dc,n)} ')
 print(f'Est ce un carré façons Sud-Ouest comme départ le milieu de la dernière ligne est magique : {outil_carre_magique.carre_is_magic(carre_so_dl,n)} ')
 print(f'Est ce un carré façons Sud-Ouest comme départ le milieu de la première colonne est magique : {outil_carre_magique.carre_is_magic(carre_so_pc,n)} ')
+
+print("Test avec carre_debut\n")
+n1 = 167
+c1 = 2336163
+print(f'n = {n1} c = {c1} : k = {carre_siamois.debut_carre(n1,c1)}')
+n2 = 1601
+c2 = 2052570055
+print(f'n = {n2} c = {c2} : k = {carre_siamois.debut_carre(n2,c2)}')
+n2 = 1601
+c3 = 2052570057
+print(f'n = {n2} c = {c3} : k = {carre_siamois.debut_carre(n2,c3)}')
