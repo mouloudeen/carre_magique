@@ -312,7 +312,21 @@ def carre_siamois_so_pc(n : int,k : int) -> List [int]:
     
 #Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique
 def debut_carre(n,c):
-    if (c >= (n**2*(n**2+1))/(2*n) and c%n == 0 ):
-        return (2*c -n**3+n)/(2*n)
-    else :
-        return 0
+    return (2*c -n**3+n)/(2*n)
+    
+
+#Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré
+def carre_siamois(funct,n,c):
+   
+    # si c a cette condition , il doit etre le minimum
+    #possible de la constante magique
+    if c < (n**2*(n**2+1))/(2*n):
+            c = (n**2*(n**2+1))/(2*n)
+    
+    # On prendra le c le plus proche qui est divisible par n
+    elif c%n != 0:
+            i = c//n
+            c = i*n
+    #Recupère le nombre du début carré magique
+    k = debut_carre(n,c)
+    return funct(n,k)
