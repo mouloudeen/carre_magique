@@ -9,5 +9,9 @@
 #define carre_siamois_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
+typedef unsigned int uint;
+
+int ** carre_siamois_ne_pl(int, int);
 #endif /* carre_siamois_h */
