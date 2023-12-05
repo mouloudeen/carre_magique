@@ -39,4 +39,4 @@
 *.code-workspace 
 __pycache__
 *.ipynb
-*.xcodeproj
+*.xcodeproj*
