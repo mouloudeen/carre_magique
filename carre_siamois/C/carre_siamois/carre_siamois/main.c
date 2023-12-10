@@ -11,16 +11,36 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-   int ** carre;
-    int n = 7;
-    int k = 9;
-    carre = carre_siamois_ne_pl(n, k);
-    for (int i = 0; i< n; i++){
-        for(int j =0; j < n; j++){
-            printf("%d ",carre[i][j]);
-        }
-        printf("\n");
-    }
+    
+     /* teste les 8 formes carre siamois*/
+     /* int n = 3;
+    int k = 1;
+    int ** carre_ne_pl;
+    carre_ne_pl = carre_siamois_ne_pl(n, k);
+    AffichageCarre(carre_ne_pl,n);
+    int ** carre_ne_dc;
+    carre_ne_dc = carre_siamois_ne_dc(n, k);
+    AffichageCarre(carre_ne_dc,n);
+    int ** carre_se_dl;
+    carre_se_dl = carre_siamois_se_dl(n, k);
+    AffichageCarre(carre_se_dl,n);
+    int ** carre_se_dc;
+    carre_se_dc = carre_siamois_se_dc(n, k);
+    AffichageCarre(carre_se_dc,n);
+    int ** carre_no_pl;
+    carre_no_pl = carre_siamois_no_pl(n, k);
+    AffichageCarre(carre_no_pl,n);
+    int ** carre_no_pc;
+    carre_no_pc = carre_siamois_no_pc(n, k);
+    AffichageCarre(carre_no_pc,n);
+    int ** carre_so_dl;
+    carre_so_dl = carre_siamois_so_dl(n, k);
+    AffichageCarre(carre_so_dl,n);
+    int ** carre_so_pc;
+    carre_so_pc = carre_siamois_so_pc(n, k);
+    AffichageCarre(carre_ne_pl,n);*/
+    
+    /* teste avec les outils*/
     
     
     return 0;

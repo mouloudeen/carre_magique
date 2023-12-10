@@ -13,5 +13,34 @@
 
 typedef unsigned int uint;
 
+/* Remplir le carré magique */
+int ** remplir_carre(int, int, int, int, int, int, int, int);
+
+/* Siamois Nord Est avec comme départ le milieu de la première ligne */
 int ** carre_siamois_ne_pl(int, int);
+
+/*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
+int ** carre_siamois_ne_dc(int, int);
+
+/*Siamois Sud Est comme départ le milieu de la dernière ligne*/
+int ** carre_siamois_se_dl(int, int);
+
+/*Siamois Sud Est comme départ le milieu de la dernière colonne*/
+int ** carre_siamois_se_dc(int, int);
+
+/*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
+int ** carre_siamois_no_pl(int, int);
+
+/*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
+int ** carre_siamois_no_pc(int, int);
+
+/*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
+int ** carre_siamois_so_dl(int, int);
+
+/*Siamois Sud Ouest comme départ le milieu de la première colonne*/
+int ** carre_siamois_so_pc(int, int);
+
+/* Affichage du carré magique*/
+void AffichageCarre(int **, int);
+
 #endif /* carre_siamois_h */
