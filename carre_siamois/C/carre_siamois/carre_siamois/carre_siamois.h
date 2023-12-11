@@ -40,6 +40,9 @@ int ** carre_siamois_so_dl(int, int);
 /*Siamois Sud Ouest comme départ le milieu de la première colonne*/
 int ** carre_siamois_so_pc(int, int);
 
+/*Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique*/
+int debut_carre(int,int);
+
 /* Affichage du carré magique*/
 void AffichageCarre(int **, int);
 

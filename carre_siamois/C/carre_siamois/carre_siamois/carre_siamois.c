@@ -57,6 +57,11 @@ int ** remplir_carre(int n, int k, int debut_i, int debut_j, int dep_i, int dep_
         if (i==0){
             i = n;
         }
+        
+        /* au cas j = 0, on ne peut utiliser le modulo n*/
+        if (j==0){
+            j = n;
+        }
         /* On verifie si le case ((i +dep_i) % n,(j +dep_j) % n) n est pas rempli*/
         if (carre[(i + dep_i)%n][(j + dep_j)%n] != 0){
             /* alors on rempli la case ((i + depls_i) % n, (j+ depls_j)%n)*/
@@ -132,6 +137,10 @@ int ** carre_siamois_so_pc(int n, int k){
     return remplir_carre(n,k,(n-1)/2,0,1,-1,0,1);
                     }
 
+/*Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique*/
+int debut_carre(int n,int c){
+    return (2*c +n*(-n*n+1))/(2*n);
+}
 /* Affichage du carré magique*/
 void AffichageCarre(int ** carre, int n){
     for (int i = 0; i< n; i++){
