@@ -7,6 +7,14 @@
 
 #include "carre_siamois.h"
 
+/* pour remmettre le buffer à zero */
+void flush_buffer(void){
+    int c = 0;
+    while(c!='\n' && c != EOF){
+        c = getchar();
+    }
+}
+
 /*Les 8 modèles possibles de la construction de façon siamois*/
 
 /* Remplir le carré magique */
@@ -161,3 +169,58 @@ void AffichageCarre(int ** carre, int n){
     }
     printf("\n");
 }
+
+
+/*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré*/
+int ** carre_siamois(char funct[21],int n,int c){
+    /*si c a cette condition , il doit etre le minimum
+     #possible de la constante magique*/
+    if (c < (n*(n*(n*n+1)))/(2*n)){
+        c = (n*(n*(n*n+1)))/(2*n);
+    }
+    /*On prendra le c le plus proche qui est divisible par n*/
+    else if(c%n != 0){
+        int i = c/n;
+        c = i*n;
+    }
+    printf("c = %d\n",c);
+    /*Recupère le nombre du début carré magique*/
+    int k = debut_carre(n,c);
+    printf("k = %d\n", k);
+    if (strcmp(funct, "carre_siamois_ne_pl") == 0){
+        return carre_siamois_ne_pl(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_ne_dc") == 0){
+        return carre_siamois_ne_dc(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_se_dl") == 0){
+        return carre_siamois_se_dl(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_se_dc") == 0){
+        return carre_siamois_se_dc(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_no_pl") == 0){
+        return carre_siamois_no_pl(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_no_pc") == 0){
+        return carre_siamois_no_pc(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_so_dl")){
+        return carre_siamois_so_dl(n,k);
+    }
+    
+    else if (strcmp(funct, "carre_siamois_so_pc")){
+        return carre_siamois_so_pc(n,k);
+    }
+    
+    else {
+        return NULL;
+    }
+}
+ 

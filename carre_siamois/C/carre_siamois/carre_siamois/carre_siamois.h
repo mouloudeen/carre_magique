@@ -10,8 +10,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef unsigned int uint;
+
+/* pour remmettre le buffer à zero */
+void flush_buffer(void);
 
 /* Remplir le carré magique */
 int ** remplir_carre(int, int, int, int, int, int, int, int);
@@ -43,7 +47,13 @@ int ** carre_siamois_so_pc(int, int);
 /*Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique*/
 int debut_carre(int,int);
 
+
+
 /* Affichage du carré magique*/
 void AffichageCarre(int **, int);
+
+
+/*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré*/
+int ** carre_siamois(char[21],int,int);
 
 #endif /* carre_siamois_h */
