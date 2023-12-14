@@ -223,4 +223,13 @@ int ** carre_siamois(char funct[21],int n,int c){
         return NULL;
     }
 }
- 
+
+/* Desalloué la mémoire du carre */
+void Free_carre(int ** carre,int n){
+    if (carre != NULL){
+        for (int i = 0; i<n; i++){
+            free(carre[i]);
+        }
+        free(carre);
+    }
+}

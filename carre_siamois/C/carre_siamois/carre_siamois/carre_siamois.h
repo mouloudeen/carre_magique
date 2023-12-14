@@ -56,4 +56,7 @@ void AffichageCarre(int **, int);
 /*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré*/
 int ** carre_siamois(char[21],int,int);
 
+/* Desalloué la mémoire du carre */
+void Free_carre(int **,int);
+
 #endif /* carre_siamois_h */

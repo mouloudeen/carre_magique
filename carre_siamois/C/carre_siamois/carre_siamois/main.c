@@ -102,12 +102,15 @@ int main(int argc, const char * argv[]) {
     int ** carre_ne_pl;
     carre_ne_pl = carre_siamois("carre_siamois_ne_pl",n, c);
     AffichageCarre(carre_ne_pl,n);
+    
     int ** carre_ne_dc;
     carre_ne_dc = carre_siamois("carre_siamois_ne_dc",n, c);
     AffichageCarre(carre_ne_dc,n);
+    
     int ** carre_se_dl;
     carre_se_dl = carre_siamois("carre_siamois_se_dl",n, c);
     AffichageCarre(carre_se_dl,n);
+    
     int ** carre_se_dc;
     carre_se_dc = carre_siamois("carre_siamois_se_dc",n, c);
     AffichageCarre(carre_se_dc,n);
@@ -115,16 +118,29 @@ int main(int argc, const char * argv[]) {
     int ** carre_no_pl;
     carre_no_pl = carre_siamois("carre_siamois_no_pl",n, c);
     AffichageCarre(carre_no_pl,n);
+    
     int ** carre_no_pc;
     carre_no_pc = carre_siamois("carre_siamois_no_pc",n, c);
     AffichageCarre(carre_no_pc,n);
+    
     int ** carre_so_dl;
     carre_so_dl = carre_siamois("carre_siamois_so_dl",n, c);
     AffichageCarre(carre_so_dl,n);
+    
     int ** carre_so_pc;
     carre_so_pc = carre_siamois("carre_siamois_so_pc",n, c);
     AffichageCarre(carre_so_pc,n);
     
+    Free_carre(carre_ne_pl,n);
+    Free_carre(carre_ne_dc,n);
+    Free_carre(carre_se_dl,n);
+    Free_carre(carre_se_dc,n);
+    Free_carre(carre_no_pl,n);
+    Free_carre(carre_no_pc,n);
+    Free_carre(carre_so_dl,n);
+    Free_carre(carre_so_pc,n);
+    
+    AffichageCarre(carre_so_pc,n);
     
     return 0;
 }
