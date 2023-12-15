@@ -40,3 +40,5 @@
 __pycache__
 *.ipynb
 carre_siamois.xcodeproj/
+build-carre_siamois-Qt_6_6_0_for_macOS-Debug/
+*.pro*
