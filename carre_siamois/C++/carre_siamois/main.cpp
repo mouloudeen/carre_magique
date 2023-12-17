@@ -2,7 +2,9 @@
 
 int main()
 {
-    Siamois * carre = new Siamois(5);
+    Siamois * carre = new Siamois(3);
     carre->AffichageCarre();
 
+    carre->remplir_carre(1,0,1,-1,1,1,0);
+    carre->AffichageCarre();
 }

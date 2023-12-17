@@ -13,8 +13,12 @@ public:
     Siamois(int ordre);
 
 
+    /* Remplir le carré magique */
+    void remplir_carre( int k, int debut_i, int debut_j, int dep_i, int dep_j, int depls_i, int depls_j);
+
+
     /* Affichage du carré magique*/
-void AffichageCarre();
+    void AffichageCarre();
 
     /*Destructeur*/
     ~Siamois();
