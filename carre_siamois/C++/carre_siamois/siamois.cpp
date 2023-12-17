@@ -11,7 +11,7 @@ Siamois::Siamois(int ordre): m_ordre(ordre)
 
     for(int i = 0; i < m_ordre;i++){
         for(int j = 0; j < m_ordre; j++){
-            m_carre[i][j] = 100;
+            m_carre[i][j] = 0;
         }
     }
 }
@@ -81,6 +81,56 @@ if (m_carre[(i + dep_i)%m_ordre][(j + dep_j)%m_ordre] != 0){
 }
 
 
+/*Siamois Nord Est avec comme départ le milieu de la première ligne*/
+void Siamois::carre_siamois_ne_pl(int k){
+
+    return remplir_carre(k,0,(m_ordre-1)/2,-1,1,1,0);
+}
+
+/*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
+void Siamois::carre_siamois_ne_dc(int k){
+
+    return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,-1,1,0,-1);
+}
+
+/*Siamois Sud Est comme départ le milieu de la dernière ligne*/
+void Siamois::carre_siamois_se_dl(int k){
+    return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,1,-1,0);
+}
+
+/*Siamois Sud Est comme départ le milieu de la dernière colonne*/
+void Siamois::carre_siamois_se_dc(int k){
+    return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,1,1,0,-1);
+}
+
+/*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
+void Siamois::carre_siamois_no_pl(int k){
+    return remplir_carre(k,0,(m_ordre-1)/2,-1,-1,1,0);
+}
+
+
+/*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
+void Siamois::carre_siamois_no_pc(int k){
+    return remplir_carre(k,(m_ordre-1)/2,0,-1,-1,0,1);
+}
+
+
+/*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
+void Siamois::carre_siamois_so_dl(int k){
+    return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,-1,-1,0);
+}
+
+
+/*Siamois Sud Ouest comme départ le milieu de la première colonne*/
+void Siamois::carre_siamois_so_pc(int k){
+    return remplir_carre(k,(m_ordre-1)/2,0,1,-1,0,1);
+}
+
+/*Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique*/
+int Siamois::debut_carre(int c){
+    return (2*c +m_ordre*(-m_ordre*m_ordre+1))/(2*m_ordre);
+}
+
 
 /* Affichage du carré magique*/
 void Siamois::AffichageCarre(){
@@ -106,6 +156,13 @@ void Siamois::AffichageCarre(){
 
 
 /*Destructeur*/
-Siamois::~Siamois(){}
+Siamois::~Siamois(){
+    /* vidage mémoire */
+    for(int i=0;i< m_ordre;i++){
+        delete [] m_carre[i];
+    }
+    delete [] m_carre;
+
+}
 
 
