@@ -1,4 +1,5 @@
 #include "siamois.hpp"
+#include "outilCarre.hpp"
 
 int main()
 {
@@ -97,25 +98,13 @@ int main()
     Siamois * carre_ne_dc = new Siamois(3);
     carre_ne_dc->carre_siamois("carre_siamois_ne_dc",1);
 
-    int ** carre2 = carre_ne_dc->getCarre();
-    int ordre2 = carre_ne_dc->getOrdre();
-    for (int i = 0; i< ordre2; i++){
-        for(int j =0; j < ordre2; j++){
-            cout <<" ---";
-        }
-        cout << "\n";
-        cout <<"| ";
-        for(int j =0; j <ordre2; j++){
-            cout   <<carre2[i][j] <<" | ";
-        }
+    OutilCarre *test1 = new OutilCarre(carre_ne_dc->getOrdre(),carre_ne_dc->getCarre());
+    cout << test1->sum_ligne(1) <<endl;
+    cout << test1->sum_colonne(1) <<endl;
+    cout << test1->sum_diag1() <<endl;
+    cout << test1->sum_diag2() <<endl;
+    cout << test1->carre_est_magique() <<endl;
 
-        cout <<"\n";
-
-
-    }
-    for(int j =0; j < ordre2; j++){
-        cout <<" ---";
-    }
-    cout<< "\n";
+    delete test1;
 
 }

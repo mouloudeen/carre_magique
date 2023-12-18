@@ -6,7 +6,7 @@ Siamois::Siamois(int ordre): m_ordre(ordre)
 
     m_carre = new int* [m_ordre];
     for (int i =0; i < m_ordre; i++){
-    m_carre[i] = new int[m_ordre];
+        m_carre[i] = new int[m_ordre];
     }
 
     for(int i = 0; i < m_ordre;i++){
@@ -81,120 +81,120 @@ if (m_carre[(i + dep_i)%m_ordre][(j + dep_j)%m_ordre] != 0){
 }
 
 /*recupèrer le carré */
-int ** Siamois::getCarre(){
-    return m_carre;
-}
+    int ** Siamois::getCarre(){
+        return m_carre;
+    }
 
-/*recupèrer l'ordre du carré*/
-int Siamois::getOrdre(){
-    return m_ordre;
-}
+    /*recupèrer l'ordre du carré*/
+    int Siamois::getOrdre(){
+        return m_ordre;
+    }
 
-/*Siamois Nord Est avec comme départ le milieu de la première ligne*/
-void Siamois::carre_siamois_ne_pl(int k){
+    /*Siamois Nord Est avec comme départ le milieu de la première ligne*/
+    void Siamois::carre_siamois_ne_pl(int k){
 
-    return remplir_carre(k,0,(m_ordre-1)/2,-1,1,1,0);
-}
+        return remplir_carre(k,0,(m_ordre-1)/2,-1,1,1,0);
+    }
 
-/*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
-void Siamois::carre_siamois_ne_dc(int k){
+    /*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
+    void Siamois::carre_siamois_ne_dc(int k){
 
-    return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,-1,1,0,-1);
-}
+        return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,-1,1,0,-1);
+    }
 
-/*Siamois Sud Est comme départ le milieu de la dernière ligne*/
-void Siamois::carre_siamois_se_dl(int k){
-    return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,1,-1,0);
-}
+    /*Siamois Sud Est comme départ le milieu de la dernière ligne*/
+    void Siamois::carre_siamois_se_dl(int k){
+        return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,1,-1,0);
+    }
 
-/*Siamois Sud Est comme départ le milieu de la dernière colonne*/
-void Siamois::carre_siamois_se_dc(int k){
-    return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,1,1,0,-1);
-}
+    /*Siamois Sud Est comme départ le milieu de la dernière colonne*/
+    void Siamois::carre_siamois_se_dc(int k){
+        return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,1,1,0,-1);
+    }
 
-/*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
-void Siamois::carre_siamois_no_pl(int k){
-    return remplir_carre(k,0,(m_ordre-1)/2,-1,-1,1,0);
-}
-
-
-/*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
-void Siamois::carre_siamois_no_pc(int k){
-    return remplir_carre(k,(m_ordre-1)/2,0,-1,-1,0,1);
-}
+    /*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
+    void Siamois::carre_siamois_no_pl(int k){
+        return remplir_carre(k,0,(m_ordre-1)/2,-1,-1,1,0);
+    }
 
 
-/*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
-void Siamois::carre_siamois_so_dl(int k){
-    return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,-1,-1,0);
-}
+    /*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
+    void Siamois::carre_siamois_no_pc(int k){
+        return remplir_carre(k,(m_ordre-1)/2,0,-1,-1,0,1);
+    }
 
 
-/*Siamois Sud Ouest comme départ le milieu de la première colonne*/
-void Siamois::carre_siamois_so_pc(int k){
-    return remplir_carre(k,(m_ordre-1)/2,0,1,-1,0,1);
-}
+    /*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
+    void Siamois::carre_siamois_so_dl(int k){
+        return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,-1,-1,0);
+    }
 
-/*Fonction qui trouve le chiffre de début en connaissant la constante magique*/
+
+    /*Siamois Sud Ouest comme départ le milieu de la première colonne*/
+    void Siamois::carre_siamois_so_pc(int k){
+        return remplir_carre(k,(m_ordre-1)/2,0,1,-1,0,1);
+    }
+
+    /*Fonction qui trouve le chiffre de début en connaissant la constante magique*/
 int Siamois::debut_carre(int c){
     return (2*c +m_ordre*(-m_ordre*m_ordre+1))/(2*m_ordre);
 }
 
 /*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique*/
-void Siamois::carre_siamois(string funct,int c){
-    /*si c a cette condition , il doit etre le minimum
+    void Siamois::carre_siamois(string funct,int c){
+        /*si c a cette condition , il doit etre le minimum
      #possible de la constante magique*/
-if (c < (m_ordre*(m_ordre*(m_ordre*m_ordre+1)))/(2*m_ordre)){
-    c = (m_ordre*(m_ordre*(m_ordre*m_ordre+1)))/(2*m_ordre);
-}
-/*On prendra le c le plus proche qui est divisible par m_ordre*/
-else if(c%m_ordre != 0){
-    int i = c/m_ordre;
-    c = i*m_ordre;
-}
+        if (c < (m_ordre*(m_ordre*(m_ordre*m_ordre+1)))/(2*m_ordre)){
+            c = (m_ordre*(m_ordre*(m_ordre*m_ordre+1)))/(2*m_ordre);
+        }
+        /*On prendra le c le plus proche qui est divisible par m_ordre*/
+        else if(c%m_ordre != 0){
+            int i = c/m_ordre;
+            c = i*m_ordre;
+        }
 
-/*Recupère le nombre du début carré magique*/
-int k = debut_carre(c);
+        /*Recupère le nombre du début carré magique*/
+        int k = debut_carre(c);
 
-if (strcmp(funct.c_str(), "carre_siamois_ne_pl") == 0){
-    return carre_siamois_ne_pl(k);
-}
+        if (strcmp(funct.c_str(), "carre_siamois_ne_pl") == 0){
+            return carre_siamois_ne_pl(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_ne_dc") == 0){
-    return carre_siamois_ne_dc(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_ne_dc") == 0){
+            return carre_siamois_ne_dc(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_se_dl") == 0){
-    return carre_siamois_se_dl(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_se_dl") == 0){
+            return carre_siamois_se_dl(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_se_dc") == 0){
-    return carre_siamois_se_dc(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_se_dc") == 0){
+            return carre_siamois_se_dc(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_no_pl") == 0){
-    return carre_siamois_no_pl(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_no_pl") == 0){
+            return carre_siamois_no_pl(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_no_pc") == 0){
-    return carre_siamois_no_pc(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_no_pc") == 0){
+            return carre_siamois_no_pc(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_so_dl")){
-    return carre_siamois_so_dl(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_so_dl")){
+            return carre_siamois_so_dl(k);
+        }
 
-else if (strcmp(funct.c_str(), "carre_siamois_so_pc")){
-    return carre_siamois_so_pc(k);
-}
+        else if (strcmp(funct.c_str(), "carre_siamois_so_pc")){
+            return carre_siamois_so_pc(k);
+        }
 
-else {
-    m_carre = NULL;
-}
-}
+        else {
+            m_carre = NULL;
+        }
+    }
 
 
-/* Affichage du carré magique*/
+    /* Affichage du carré magique*/
 void Siamois::AffichageCarre(){
     for (int i = 0; i< m_ordre; i++){
         for(int j =0; j < m_ordre; j++){
@@ -218,8 +218,8 @@ void Siamois::AffichageCarre(){
 
 
 /*Destructeur*/
-Siamois::~Siamois(){
-    /* vidage mémoire */
+    Siamois::~Siamois(){
+        /* vidage mémoire */
     for(int i=0;i< m_ordre;i++){
         delete [] m_carre[i];
     }
