@@ -2,7 +2,7 @@
 #define SIAMOIS_HPP
 
 #include <iostream>
-
+#include <cstring>
 
 using namespace std;
 
@@ -12,10 +12,14 @@ public:
     /*Constructeur*/
     Siamois(int ordre);
 
-
-    /* Remplir le carré magique */
+     /* Remplir le carré magique */
     void remplir_carre( int k, int debut_i, int debut_j, int dep_i, int dep_j, int depls_i, int depls_j);
 
+    /*recupèrer le carré */
+    int ** getCarre();
+
+    /*recupèrer l'ordre du carré*/
+    int getOrdre();
 
     /* Siamois Nord Est avec comme départ le milieu de la première ligne */
     void carre_siamois_ne_pl(int k);
@@ -43,6 +47,10 @@ public:
 
     /*Fonction qui trouve le chiffre de début en connaissant la constante magique*/
     int debut_carre(int c);
+
+    /*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré*/
+    void carre_siamois(string funct,int c);
+
 
     /* Affichage du carré magique*/
     void AffichageCarre();
