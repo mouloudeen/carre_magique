@@ -96,40 +96,55 @@ int main(int argc, const char * argv[]) {
     printf("somme de la ligne d'indice 2 : %d\n", sum_colonne(carre_no_pl, 2, n));*/
     
     
-    int n = 5;
-    int c = 3355;
+    int n = 5057;
+    int k = 2465;
    
     int ** carre_ne_pl;
-    carre_ne_pl = carre_siamois("carre_siamois_ne_pl",n, c);
-    AffichageCarre(carre_ne_pl,n);
+    carre_ne_pl = carre_siamois_ne_pl(n, k);
+    
     
     int ** carre_ne_dc;
-    carre_ne_dc = carre_siamois("carre_siamois_ne_dc",n, c);
-    AffichageCarre(carre_ne_dc,n);
+    carre_ne_dc = carre_siamois_ne_dc(n, k);
+    
     
     int ** carre_se_dl;
-    carre_se_dl = carre_siamois("carre_siamois_se_dl",n, c);
-    AffichageCarre(carre_se_dl,n);
+    carre_se_dl = carre_siamois_se_dl(n, k);
+    
     
     int ** carre_se_dc;
-    carre_se_dc = carre_siamois("carre_siamois_se_dc",n, c);
-    AffichageCarre(carre_se_dc,n);
+    carre_se_dc = carre_siamois_se_dc(n, k);
+    
     
     int ** carre_no_pl;
-    carre_no_pl = carre_siamois("carre_siamois_no_pl",n, c);
-    AffichageCarre(carre_no_pl,n);
+    carre_no_pl = carre_siamois_no_pl(n, k);
+    
     
     int ** carre_no_pc;
-    carre_no_pc = carre_siamois("carre_siamois_no_pc",n, c);
-    AffichageCarre(carre_no_pc,n);
+    carre_no_pc = carre_siamois_no_pc(n, k);
+    
     
     int ** carre_so_dl;
-    carre_so_dl = carre_siamois("carre_siamois_so_dl",n, c);
-    AffichageCarre(carre_so_dl,n);
+    carre_so_dl = carre_siamois_so_dl(n, k);
+    
     
     int ** carre_so_pc;
-    carre_so_pc = carre_siamois("carre_siamois_so_pc",n, c);
-    AffichageCarre(carre_so_pc,n);
+    carre_so_pc = carre_siamois_so_pc(n, k);
+    
+    printf("carre_siamois_ne_pl est magique %d\n",carre_est_magique(carre_ne_pl,n));
+    
+    printf("carre_siamois_ne_dc est magique %d\n",carre_est_magique(carre_ne_dc,n));
+    
+    printf("carre_siamois_se_dl est magique %d\n",carre_est_magique(carre_se_dl,n));
+    
+    printf("carre_siamois_se_dc est magique %d\n",carre_est_magique(carre_se_dc,n));
+    
+    printf("carre_siamois_no_pl est magique %d\n",carre_est_magique(carre_no_pl,n));
+    
+    printf("carre_siamois_no_pc est magique %d\n",carre_est_magique(carre_no_pc,n));
+    
+    printf("carre_siamois_so_dl est magique %d\n",carre_est_magique(carre_so_dl,n));
+    
+    printf("carre_siamois_so_pc est magique %d\n",carre_est_magique(carre_so_pc,n));
     
     Free_carre(carre_ne_pl,n);
     Free_carre(carre_ne_dc,n);
@@ -140,7 +155,7 @@ int main(int argc, const char * argv[]) {
     Free_carre(carre_so_dl,n);
     Free_carre(carre_so_pc,n);
     
-    AffichageCarre(carre_so_pc,n);
+    
     
     return 0;
 }

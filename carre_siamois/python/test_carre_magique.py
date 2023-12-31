@@ -2,7 +2,7 @@ import random
 import carre_siamois
 import outil_carre_magique
 
-n = 7
+'''n = 7
 k = 4
 
 carre_ne_pl = carre_siamois.carre_siamois_ne_pl(n,k)
@@ -59,14 +59,14 @@ print(f'carre siamois Sud Ouest comme départ le milieu de la première colonne 
 for i in range(n):
     print (f'{carre_so_pc[i]} ')
 
-print(f'Est ce un carré magique : {outil_carre_magique.carre_is_magic(carre_so_pc,n)} ')
+print(f'Est ce un carré magique : {outil_carre_magique.carre_is_magic(carre_so_pc,n)} ')'''
 
-print("on teste avec un ordre impaire alétoire et le début aléatoire")
+print("on teste avec un ordre 5057 alétoire et le début est 2465")
 
-n = random.randint(1,10000)
-while (n%2 != 1):
-	n = random.randint(1,10000)
-k = random.randint(1,10000)
+n=5057
+k=2465
+
+
 
 
 print(f'carre siamois d ordre {n} avec comme début {k}')
@@ -87,7 +87,7 @@ print(f'Est ce un carré façons Sud-Est comme départ le milieu de la dernière
 print(f'Est ce un carré façons Sud-Est comme départ le milieu de la dernière colonne est magique : {outil_carre_magique.carre_is_magic(carre_se_dc,n)} ')
 print(f'Est ce un carré façons Sud-Ouest comme départ le milieu de la dernière ligne est magique : {outil_carre_magique.carre_is_magic(carre_so_dl,n)} ')
 print(f'Est ce un carré façons Sud-Ouest comme départ le milieu de la première colonne est magique : {outil_carre_magique.carre_is_magic(carre_so_pc,n)} ')
-
+'''
 print("Test avec carre_siamois\n")
 n1 = 3
 c1 = 15
@@ -102,4 +102,4 @@ c2 = 150
 carre_2 = carre_siamois.carre_siamois(carre_siamois.carre_siamois_ne_pl,n2,c2)
 print(f'n = {n2} c = {c2}')
 for i in range(n2):
-    print(f'{carre_2[i]}')
+    print(f'{carre_2[i]}')'''
