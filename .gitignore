@@ -39,6 +39,8 @@
 *.code-workspace 
 __pycache__
 *.ipynb
-*.xcodeproj/*
+carre_siamois/C/carre_siamois/carre_siamois.xcodeproj/
+carre_lozenge/C/carre_lozenge/carre_lozenge.xcodeproj/project.pbxproj
+carre_lozenge/C/carre_lozenge/carre_lozenge.xcodeproj/project.xcworkspace/xcuserdata/sidalizitouniterki.xcuserdatad/UserInterfaceState.xcuserstate
 build-carre_siamois-Qt_6_6_0_for_macOS-Debug/
 *.pro*
