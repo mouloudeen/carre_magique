@@ -48,4 +48,4 @@ $$k = \frac{2.n.c + n^4 - n^2 +(-n^2 +1).2.n^2 }{2.n^2}$$
 Après développement et simplification on trouve:
 $$k = \frac{2.c - n^3 + n  }{2.n}$$
                   
-On commence à l'implémenter en python:
+Elle est implémnté en Python, C et C++ de façon Programme Orienté Objet.
