@@ -72,21 +72,21 @@ int main()
     cout << "lozenge avec "<< lozenge5->GetOrdre() << " est magique " << test5->carre_est_magique() << endl;
 
 
-   /* delete lozenge_3;
+   delete lozenge_3;
     delete lozenge_5;
     delete lozenge_7;
     delete lozenge_9;
     delete lozenge_11;
     delete lozenge_13;
     delete lozenge1;
-    delete test1;
+    /*delete test1;*/
     delete lozenge2;
-    delete test2;
-    delete lozenge3;
-    delete test3;
-    delete lozenge4;
-    delete test4;
+    /*delete test2;*/
+   delete lozenge3;
+    /*delete test3;*/
+   delete lozenge4;
+    /*delete test4;*/
     delete lozenge5;
-    delete test5;*/
+    /*delete test5;*/
     return 0;
 }

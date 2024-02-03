@@ -158,21 +158,21 @@ int main()
     cout << test_so_pc->carre_est_magique() <<endl;
 
 
-    /*delete carre_ne_pl;
-    delete test_ne_pl;
+    delete carre_ne_pl;
+
     delete carre_ne_dc;
-    delete test_ne_dc;
+
     delete carre_se_dl;
-    delete test_se_dl;
+
     delete carre_se_dc;
-    delete test_se_dc;
+
     delete carre_no_pl;
-    delete test_no_pl;
+
     delete carre_no_pc;
-    delete test_no_pc;
+
     delete carre_so_dl;
-    delete test_so_dl;
+
     delete carre_so_pc;
-    delete test_so_pc;*/
+
 
 }
