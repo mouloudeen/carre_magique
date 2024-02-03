@@ -79,14 +79,14 @@ int main()
     delete lozenge_11;
     delete lozenge_13;
     delete lozenge1;
-    /*delete test1;*/
+
     delete lozenge2;
-    /*delete test2;*/
+
    delete lozenge3;
-    /*delete test3;*/
+
    delete lozenge4;
-    /*delete test4;*/
+
     delete lozenge5;
-    /*delete test5;*/
+
     return 0;
 }
