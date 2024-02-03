@@ -127,7 +127,7 @@ int ** remplir_pair_gauche(int ** carre ,int ordre){
     int i_d = 0;
     int j_d = (ordre-1)/2-1;
     
-    /*on initialise k à n*n+1,arret à 0 et cptg à 1*/
+    /*on initialise k à ordre*ordre+1,arret à 0 et cptg à 1*/
     int debut = ordre*ordre+1;
     int arret = 0;
     int cptg = 1;
