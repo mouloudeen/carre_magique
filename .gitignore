@@ -39,7 +39,10 @@
 *.code-workspace 
 __pycache__
 *.ipynb
-carre_siamois/C/carre_siamois/carre_siamois.xcodeproj/
+carre_siamois.xcodeproj/
+carre_siamois/c/carre_siamois/carre_siamois.xcodeproj/project.pbxproj
+carre_siamois/c/carre_siamois/carre_siamois.xcodeproj/project.xcworkspace/
+carre_siamois/c/carre_siamois/carre_siamois.xcodeproj/xcuserdata/sidalizitouniterki.xcuserdatad/xcschemes/
 carre_lozenge.xcodeproj/
 carre_lozenge/C/carre_lozenge/carre_lozenge.xcodeproj/project.pbxproj
 carre_lozenge/C/carre_lozenge/carre_lozenge.xcodeproj/project.xcworkspace/xcuserdata/sidalizitouniterki.xcuserdatad/UserInterfaceState.xcuserstate
