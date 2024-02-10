@@ -8,10 +8,10 @@
 #include "carre_permutation_diagonale.h"
 
 /*On remplit partant du coordonnée (i,j) avec comme déplacement (idep,jdep)*/
-int ** initialisation(int ** carre, int i, int j, int idep, int jdep, int ordre){
+int ** initialisation(int ** carre, int i, int j, int idep, int jdep,int pas, int debut, int ordre){
     int cpt = 1;
     /*on remplit la 1er valeur de coordonnée (i,j)*/
-    carre[i][j]= i*ordre + j+1;
+    carre[i][j]= (i*ordre + j+debut)*pas;
     /*puis on continue en se deplaçant (ordre-1) fois*/
     while (cpt < ordre) {
         
@@ -23,7 +23,7 @@ int ** initialisation(int ** carre, int i, int j, int idep, int jdep, int ordre)
         }
         i = (i +idep)%ordre;
         j = (j+jdep)%ordre;
-        carre[i][j]= i*ordre + j+1;
+        carre[i][j]= (i*ordre + j+debut)*pas;
         
         cpt += 1;
     }
@@ -31,7 +31,7 @@ int ** initialisation(int ** carre, int i, int j, int idep, int jdep, int ordre)
 }
 
 
-int ** permu_diag(int ordre){
+int ** permu_diag(int ordre, int pas, int debut){
     /* genere un carre d'ordre n avec les indices inversé et en ajoutant 1*/
     
     int ** carre;
@@ -51,7 +51,7 @@ int ** permu_diag(int ordre){
     }
     for (int i =0; i < ordre; i++){
             for(int j =0; j < ordre;j++){
-                carre[i][j] = (ordre*ordre +1) - (i* ordre + j + 1);
+                carre[i][j] = pas*((ordre*ordre +1) - (i* ordre + j + 1)+ debut-1);
             }
         }
     /*cpt est égale au quotient de ordre/4 (on sait que l'ordre est divisible par 4)*/
@@ -64,8 +64,8 @@ int ** permu_diag(int ordre){
     
     /*on le fait autant que la valeur cpt*/
     for(int i =0; i < cpt; i++){
-        carre = initialisation(carre, i0, j0, 1, 1, ordre);
-        carre = initialisation(carre,i0,j1, 1, -1,ordre);
+        carre = initialisation(carre, i0, j0, 1, 1,pas,debut, ordre);
+        carre = initialisation(carre,i0,j1, 1, -1,pas,debut,ordre);
         i0 += 4;
     }
     return carre;

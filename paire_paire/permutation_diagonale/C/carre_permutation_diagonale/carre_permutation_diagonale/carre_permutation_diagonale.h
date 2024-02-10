@@ -12,9 +12,9 @@
 #include <stdlib.h>
 
 /*On remplit partant du coordonnée (i,j) avec comme déplacement (idep,jdep)*/
-int ** initialisation(int ** , int, int, int , int, int);
+int ** initialisation(int ** , int, int, int , int, int, int, int);
 
-int ** permu_diag(int);
+int ** permu_diag(int, int, int);
 
 /* Affichage du carré magique*/
 void AffichageCarre(int **, int);
