@@ -11,18 +11,18 @@ permutationDiagonale::permutationDiagonale(int ordre): m_ordre(ordre) {
 
     for (int i =0; i < m_ordre; i++){
         for(int j =0; j < m_ordre;j++){
-            m_carre[i][j] = (m_ordre*m_ordre +1) - (i* m_ordre + j + 1);
+            m_carre[i][j] = 0;
         }
     }
 
 }
 
 /*On remplit partant du coordonnée (i,j) avec comme déplacement (idep,jdep)*/
-void permutationDiagonale::initialisation(int i, int j, int idep, int jdep){
+void permutationDiagonale::initialisation(int i, int j, int idep, int jdep, int pas, int debut){
     int cpt = 1;
 
     /*on remplit la 1er valeur de coordonnée (i,j)*/
-    m_carre[i][j]= i*m_ordre + j+1;
+    m_carre[i][j]= (i*m_ordre + j+debut)*pas;
     /*puis on continue en se deplaçant (m_ordre-1) fois*/
     while (cpt < m_ordre) {
 
@@ -34,7 +34,7 @@ void permutationDiagonale::initialisation(int i, int j, int idep, int jdep){
         }
         i = (i +idep)%m_ordre;
         j = (j+jdep)%m_ordre;
-        m_carre[i][j]= i*m_ordre + j+1;
+        m_carre[i][j]= (i*m_ordre + j+debut)*pas;
 
         cpt += 1;
     }
@@ -43,7 +43,15 @@ void permutationDiagonale::initialisation(int i, int j, int idep, int jdep){
 
 
 /* carre magique de la façon des diagonales*/
-void permutationDiagonale::permu_diag(){
+void permutationDiagonale::permu_diag(int pas, int debut){
+
+    for (int i =0; i < m_ordre; i++){
+        for(int j =0; j < m_ordre;j++){
+            m_carre[i][j] = pas*((m_ordre*m_ordre +1) - (i* m_ordre + j + 1)+ debut-1);
+        }
+    }
+
+
     /*cpt est égale au quotient de ordre/4 (on sait que l'ordre est divisible par 4)*/
     int cpt = m_ordre/4;
 
@@ -54,8 +62,8 @@ void permutationDiagonale::permu_diag(){
 
     /*on le fait autant que la valeur cpt*/
     for(int i =0; i < cpt; i++){
-        initialisation(i0, j0, 1, 1);
-        initialisation(i0,j1, 1, -1);
+        initialisation(i0, j0, 1, 1,pas, debut);
+        initialisation(i0,j1, 1, -1, pas, debut);
         i0 += 4;
     }
 }
