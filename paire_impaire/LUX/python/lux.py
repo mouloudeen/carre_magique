@@ -85,7 +85,7 @@ def trX(carre,i0,j0,k,m):
     
     
 # on traduit le tableau lettres L, U et X pour chaque transformation
-def traduLUX(lettre,n,a,m):
+def traduLUX(lettre,n,a,mul):
     carre = [[0 for j in range(n)] for i in range(n)]
     m =  int((n-2)/4)
     i = 0
@@ -103,21 +103,21 @@ def traduLUX(lettre,n,a,m):
         # on se deplace en montant d'une diagonale en haut
         match lettre[i][j]:
             case 'L' :
-                trL(carre,i,j,k,m)
+                trL(carre,i,j,k,mul)
                 lettre[i][j] = ' '
                 i = (i-1)%(2*m+1)
                 j = (j+1)%(2*m+1)
                 k += 4*m
                 cpt += 1
             case 'U' :
-                trU(carre,i,j,k,m)
+                trU(carre,i,j,k,mul)
                 lettre[i][j] = ' '
                 i = (i-1)%(2*m+1)
                 j = (j+1)%(2*m+1)
                 k += 4*m
                 cpt += 1
             case 'X' :
-                trX(carre,i,j,k,m)
+                trX(carre,i,j,k,mul)
                 lettre[i][j] = ' '
                 i = (i-1)%(2*m+1)
                 j = (j+1)%(2*m+1)
@@ -130,10 +130,10 @@ def traduLUX(lettre,n,a,m):
         
     return carre
     
-def LUX(n,a,m):
+def LUX(n,a,mul):
     # creation du tableau de lettres L, U et X
     lettre = remplir_LUX(n)
     # on traduit chaque lettre pour avoir notre carre magique comme a le debut
     #et m les pas
-    carre = traduLUX(lettre,n,a,m)
+    carre = traduLUX(lettre,n,a,mul)
     return carre
