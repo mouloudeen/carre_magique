@@ -169,7 +169,7 @@ int ** traduLUX(char ** lettre,int ordre,int debut,int pas){
          on se deplace en montant d'une diagonale en haut*/
         switch(lettre[i][j]){
             case 'L' :
-                trL(carre,i,j,k,m);
+                trL(carre,i,j,k,pas);
                 lettre[i][j] = ' ';
                 if (i == 0){
                     i = 2*m+1;
@@ -181,7 +181,7 @@ int ** traduLUX(char ** lettre,int ordre,int debut,int pas){
                 break;
             
             case 'U':
-                trU(carre,i,j,k,m);
+                trU(carre,i,j,k,pas);
                 lettre[i][j] = ' ';
                 if (i == 0){
                     i = 2*m+1;
@@ -193,7 +193,7 @@ int ** traduLUX(char ** lettre,int ordre,int debut,int pas){
                 break;
             
             case 'X' :
-                trX(carre,i,j,k,m);
+                trX(carre,i,j,k,pas);
                 lettre[i][j] = ' ';
                 if (i == 0){
                     i = 2*m+1;
