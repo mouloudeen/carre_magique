@@ -1,0 +1,53 @@
+#ifndef SIAMOIS_HPP
+#define SIAMOIS_HPP
+
+#include <cstring>
+#include "carre.h"
+
+class Siamois : public Carre
+{
+public:
+    /*Constructeur*/
+    Siamois(int ordre);
+
+     /* Remplir le carré magique */
+    void remplir_carre( int k, int debut_i, int debut_j, int dep_i, int dep_j, int depls_i, int depls_j);
+
+    /* Siamois Nord Est avec comme départ le milieu de la première ligne */
+    void carre_siamois_ne_pl(int k);
+
+    /*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
+    void carre_siamois_ne_dc(int k);
+
+    /*Siamois Sud Est comme départ le milieu de la dernière ligne*/
+    void carre_siamois_se_dl(int k);
+
+    /*Siamois Sud Est comme départ le milieu de la dernière colonne*/
+    void carre_siamois_se_dc(int k);
+
+    /*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
+    void carre_siamois_no_pl(int k);
+
+    /*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
+    void carre_siamois_no_pc(int k);
+
+    /*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
+    void carre_siamois_so_dl(int k);
+
+    /*Siamois Sud Ouest comme départ le milieu de la première colonne*/
+    void carre_siamois_so_pc(int k);
+
+    /*Fonction qui trouve le chiffre de début en connaissant la constante magique*/
+    int debut_carre(int c);
+
+    /*Fonction qui construit un carre d'un des 8 modele qu'avec la constante magique et l'ordre du carré*/
+    void carre_siamois(string funct,int c);
+
+
+    
+
+    /*Destructeur*/
+    ~Siamois();
+};
+
+#endif // SIAMOIS_HPP
