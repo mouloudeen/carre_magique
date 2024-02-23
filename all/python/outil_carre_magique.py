@@ -35,3 +35,28 @@ def carre_is_magic(carre,n):
     if sum(carre[i]) != sum_col(carre, j, n) or sum(carre[i]) != sum_diag1(carre,n):
         return False
     return True
+
+#Outil de calculs des carrés
+
+# fonction pour additionner 2 carrés de même ordre
+def addCarre(carre1, carre2,n):
+    return [[carre1[i][j] + carre2[i][j] for j in range(n)] for i in range(n)]
+    
+# fonction pour soustraire 2 carrés de même ordre
+def souCarre(carre1, carre2,n):
+    return [[carre1[i][j] - carre2[i][j] for j in range(n)] for i in range(n)]
+    
+# fonction pour multiplie 2 carrés de même ordre
+def mulCarre(carre1, carre2,n):
+    return [[carre1[i][j] * carre2[i][j] for j in range(n)] for i in range(n)]
+    
+# multiplie chaque case de la ligne iligne du carre1 et de la colone jcol du carre2 et les additionne ensemble
+def ligneCol(carre1,carre2,iligne,jcol,n):
+    res = 0
+    for k in range(n):
+        res += carre1[iligne][k]*carre2[k][jcol]
+    return res
+    
+# multiplication comme 2 vecteurs
+def mulVecCarre(carre1,carre2,n):
+    return [[ligneCol(carre1,carre2,i,j,n) for j in range(n)] for i in range(n)]
