@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 /* calculer la somme de la ligne indice*/
 int sum_ligne(int **, int, int);
@@ -25,6 +26,22 @@ int sum_diag2(int **,int);
 
 /* Verification si c'est bien un carre magique*/
 bool carre_est_magique(int **, int);
+
+
+/* Fonction pour additionner 2 carrés de même ordre*/
+int ** addCarre(int ** , int ** , int );
+
+/* Fonction pour soustraire 2 carrés de même ordre*/
+int ** souCarre(int ** , int ** , int);
+
+/* Fonction pour multiplier 2 carrés de même ordre*/
+int ** mulCarre(int ** , int ** , int);
+
+/* multiplie chaque case de la ligne iligne du carre1 et de la colone jcol du carre2 et les additionne ensemble*/
+int ligneCol(int ** , int ** , int , int , int );
+
+/*  multiplication comme 2 vecteurs*/
+int ** mulVecCarre( int ** , int ** , int);
 
 #endif /* outil_carre_h */
 
