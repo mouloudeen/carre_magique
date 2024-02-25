@@ -46,16 +46,20 @@ int OutilCarre::sum_diag2(){
 bool OutilCarre::carre_est_magique(){
     for (int i = 0; i <m_ordre-1; i++){
         if (sum_ligne(i) !=  sum_ligne(i+1)){
+            cout <<"Ce n'est pas un carré magique d'ordre "<< m_ordre <<endl;
             return false;
         }
         else if (sum_colonne(i) != sum_colonne(i+1)){
+            cout <<"Ce n'est pas un carré magique d'ordre "<< m_ordre <<endl;
             return false;
 
         }
     }
     if (sum_diag1() != sum_diag2()){
+        cout <<"Ce n'est pas un carré magique d'ordre "<< m_ordre <<endl;
         return false;
     }
+    cout <<"C'est bien un carré magique d'ordre "<< m_ordre <<endl;;
     return true;
 }
 
