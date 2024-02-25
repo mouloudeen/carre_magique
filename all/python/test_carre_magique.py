@@ -51,7 +51,7 @@ print("On teste maintenant quelque calcul de carre pour voir si le résultat don
 print(" on teste d'abord avec les 2 algo des ordres impaires\n")
 n = 3
 carre1 = carre_lozenge.carre_lozenge(n)
-carre2 = carre_siamois.carre_siamois_se_dc(n,1)
+carre2 = carre_siamois.carre_siamois_se_dc(n,1,1)
 carre3 = outil_carre_magique.addCarre(carre1,carre2,n)
 carre4 = outil_carre_magique.souCarre(carre1,carre2,n)
 carre5 = outil_carre_magique.mulCarre(carre1,carre2,n)

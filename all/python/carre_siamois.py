@@ -4,7 +4,7 @@ from typing import List
 #Les 8 modèles possibles de la construction de façon siamois
 
 #remplir le carré magique
-def remplir_carre(carre,n,k,debut_i,debut_j,dep_i,dep_j,depls_i,depls_j):
+def remplir_carre(carre,n, pas, k,debut_i,debut_j,dep_i,dep_j,depls_i,depls_j):
     # On initialise l qui est le nombre de chiffres rajoutés au carré
     l = 1
     # On initialise i qui sera le numero de ligne à debut_i
@@ -21,71 +21,71 @@ def remplir_carre(carre,n,k,debut_i,debut_j,dep_i,dep_j,depls_i,depls_j):
             # alors on rempli la case ((i + depls_i) % n, (j+ depls_j)%n)
             i = (i + depls_i) % n
             j = (j+ depls_j)%n
-            # on augmente la valeur precedente
-            k += 1
+            # on augmente la valeur precedente par le pas
+            k += pas
             carre[i][j] = k
             # On rajoute + 1 aux nombres de chiffres rajoutés
             l += 1
         # on rempli la case (i +dep_i) % n,(j +dep_j) % n)
         i = (i + dep_i) % n
         j = (j + dep_j) % n
-        # on augmente la valeur precedente
-        k += 1
+        # on augmente la valeur precedente par le pas
+        k += pas
         carre[i][j] = k
         # On rajoute + 1 aux nombres de chiffres rajoutés
         l += 1
     return carre
 
 #Siamois Nord Est avec comme départ le milieu de la première ligne
-def carre_siamois_ne_pl(n : int,k : int) -> List [int]:
+def carre_siamois_ne_pl(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,0,int((n-1)/2),-1,1,1,0)
+    return remplir_carre(carre,n,pas,k,0,int((n-1)/2),-1,1,1,0)
 
 #Siamois Nord Est avec comme départ le milieu de la dernière colonne
-def carre_siamois_ne_dc(n : int,k : int) -> List [int]:
+def carre_siamois_ne_dc(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,int((n-1)/2),n - 1,-1,1,0,-1)
+    return remplir_carre(carre,n,pas,k,int((n-1)/2),n - 1,-1,1,0,-1)
 
 #Siamois Sud Est comme départ le milieu de la dernière ligne
-def carre_siamois_se_dl(n : int,k : int) -> List [int]:
+def carre_siamois_se_dl(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,n-1,int((n-1)/2),1,1,-1,0)
+    return remplir_carre(carre,n,pas,k,n-1,int((n-1)/2),1,1,-1,0)
     
 #Siamois Sud Est comme départ le milieu de la dernière colonne
-def carre_siamois_se_dc(n : int,k : int) -> List [int]:
+def carre_siamois_se_dc(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,int((n-1)/2),n - 1,1,1,0,-1)
+    return remplir_carre(carre,n,pas,k,int((n-1)/2),n - 1,1,1,0,-1)
 
 #Siamois Nord Ouest avec comme départ le milieu de la première ligne
-def carre_siamois_no_pl(n : int,k : int) -> List [int]:
+def carre_siamois_no_pl(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,0,int((n-1)/2),-1,-1,1,0)
+    return remplir_carre(carre,n,pas,k,0,int((n-1)/2),-1,-1,1,0)
 
 
 #Siamois Nord Ouest avec comme départ le milieu de la première colonne
-def carre_siamois_no_pc(n : int,k : int) -> List [int]:
+def carre_siamois_no_pc(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,int((n-1)/2),0,-1,-1,0,1)
+    return remplir_carre(carre,n,pas,k,int((n-1)/2),0,-1,-1,0,1)
 
     
 #Siamois Sud Ouest comme départ le milieu de la dernière ligne
-def carre_siamois_so_dl(n : int,k : int) -> List [int]:
+def carre_siamois_so_dl(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,n-1,int((n-1)/2),1,-1,-1,0)
+    return remplir_carre(carre,n,pas,k,n-1,int((n-1)/2),1,-1,-1,0)
     
 
 #Siamois Sud Ouest comme départ le milieu de la première colonne
-def carre_siamois_so_pc(n : int,k : int) -> List [int]:
+def carre_siamois_so_pc(n : int,pas : int,k : int) -> List [int]:
     # Creation d'un carré rempli de 0
     carre = [[0 for i in range(n)] for j in range(n)]
-    return remplir_carre(carre,n,k,int((n-1)/2),0,1,-1,0,1)
+    return remplir_carre(carre,n,pas,k,int((n-1)/2),0,1,-1,0,1)
 
 #Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique
 def debut_carre(n,c):
