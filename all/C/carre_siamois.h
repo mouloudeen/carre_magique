@@ -18,31 +18,31 @@ typedef unsigned int uint;
 void flush_buffer(void);
 
 /* Remplir le carré magique */
-int ** remplir_carre(int, int, int, int, int, int, int, int);
+int ** remplir_carre(int, int, int,  int, int, int, int, int, int);
 
 /* Siamois Nord Est avec comme départ le milieu de la première ligne */
-int ** carre_siamois_ne_pl(int, int);
+int ** carre_siamois_ne_pl(int,int, int);
 
 /*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
-int ** carre_siamois_ne_dc(int, int);
+int ** carre_siamois_ne_dc(int,int, int);
 
 /*Siamois Sud Est comme départ le milieu de la dernière ligne*/
-int ** carre_siamois_se_dl(int, int);
+int ** carre_siamois_se_dl(int,int, int);
 
 /*Siamois Sud Est comme départ le milieu de la dernière colonne*/
-int ** carre_siamois_se_dc(int, int);
+int ** carre_siamois_se_dc(int,int, int);
 
 /*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
-int ** carre_siamois_no_pl(int, int);
+int ** carre_siamois_no_pl(int,int, int);
 
 /*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
-int ** carre_siamois_no_pc(int, int);
+int ** carre_siamois_no_pc(int,int, int);
 
 /*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
-int ** carre_siamois_so_dl(int, int);
+int ** carre_siamois_so_dl(int,int, int);
 
 /*Siamois Sud Ouest comme départ le milieu de la première colonne*/
-int ** carre_siamois_so_pc(int, int);
+int ** carre_siamois_so_pc(int,int, int);
 
 /*Fonction qui trouve le chiffre de début en connaissant l'ordre et la constante magique*/
 int debut_carre(int,int);

@@ -78,7 +78,7 @@ printf("on teste d'abord avec les 2 algo des ordres impaires\n");
 
 int ordre = 3;
 int ** carre1 = carre_lozenge(ordre);
-int ** carre2 = carre_siamois_se_dl(ordre,4);
+int ** carre2 = carre_siamois_se_dl(ordre,2,4);
 int ** carre3 = addCarre(carre1, carre2, ordre);
 int ** carre4 = souCarre(carre1, carre2, ordre);
 int ** carre5 = mulCarre(carre1, carre2, ordre);
