@@ -18,7 +18,7 @@ Siamois::Siamois(int ordre): Carre(ordre)
 
 
 /* Remplir le carré magique */
-void Siamois::remplir_carre( int k, int debut_i, int debut_j, int dep_i, int dep_j, int depls_i, int depls_j){
+void Siamois::remplir_carre( int pas, int k, int debut_i, int debut_j, int dep_i, int dep_j, int depls_i, int depls_j){
 
 
 
@@ -56,7 +56,7 @@ if (m_carre[(i + dep_i)%m_ordre][(j + dep_j)%m_ordre] != 0){
     i = (i + depls_i)%m_ordre;
     j = (j + depls_j)%m_ordre;
     /* on augmente la valeur precedente*/
-    k += 1;
+    k += pas;
     m_carre[i][j] = k;
     /*On rajoute + 1 aux nombres de chiffres rajoutés*/
             l += 1;
@@ -68,7 +68,7 @@ if (m_carre[(i + dep_i)%m_ordre][(j + dep_j)%m_ordre] != 0){
     j = (j + dep_j)%m_ordre;
 
     /* on augmente la valeur precedente*/
-    k += 1;
+    k += pas;
     /*On rempli cette case avec la valeur augmente*/
     m_carre[i][j] = k;
     /*On rajoute + 1 aux nombres de chiffres rajoutés*/
@@ -82,48 +82,48 @@ if (m_carre[(i + dep_i)%m_ordre][(j + dep_j)%m_ordre] != 0){
 
 
     /*Siamois Nord Est avec comme départ le milieu de la première ligne*/
-    void Siamois::carre_siamois_ne_pl(int k){
+    void Siamois::carre_siamois_ne_pl(int pas,int k){
 
-        return remplir_carre(k,0,(m_ordre-1)/2,-1,1,1,0);
+        return remplir_carre(pas,k,0,(m_ordre-1)/2,-1,1,1,0);
     }
 
     /*Siamois Nord Est avec comme départ le milieu de la dernière colonne*/
-    void Siamois::carre_siamois_ne_dc(int k){
+    void Siamois::carre_siamois_ne_dc(int pas,int k){
 
-        return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,-1,1,0,-1);
+        return remplir_carre(pas,k,(m_ordre-1)/2,m_ordre - 1,-1,1,0,-1);
     }
 
     /*Siamois Sud Est comme départ le milieu de la dernière ligne*/
-    void Siamois::carre_siamois_se_dl(int k){
-        return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,1,-1,0);
+    void Siamois::carre_siamois_se_dl(int pas,int k){
+        return remplir_carre(pas,k,m_ordre-1,(m_ordre-1)/2,1,1,-1,0);
     }
 
     /*Siamois Sud Est comme départ le milieu de la dernière colonne*/
-    void Siamois::carre_siamois_se_dc(int k){
-        return remplir_carre(k,(m_ordre-1)/2,m_ordre - 1,1,1,0,-1);
+    void Siamois::carre_siamois_se_dc(int pas,int k){
+        return remplir_carre(pas,k,(m_ordre-1)/2,m_ordre - 1,1,1,0,-1);
     }
 
     /*Siamois Nord Ouest avec comme départ le milieu de la première ligne*/
-    void Siamois::carre_siamois_no_pl(int k){
-        return remplir_carre(k,0,(m_ordre-1)/2,-1,-1,1,0);
+    void Siamois::carre_siamois_no_pl(int pas,int k){
+        return remplir_carre(pas,k,0,(m_ordre-1)/2,-1,-1,1,0);
     }
 
 
     /*Siamois Nord Ouest avec comme départ le milieu de la première colonne*/
-    void Siamois::carre_siamois_no_pc(int k){
-        return remplir_carre(k,(m_ordre-1)/2,0,-1,-1,0,1);
+    void Siamois::carre_siamois_no_pc(int pas,int k){
+        return remplir_carre(pas,k,(m_ordre-1)/2,0,-1,-1,0,1);
     }
 
 
     /*Siamois Sud Ouest comme départ le milieu de la dernière ligne*/
-    void Siamois::carre_siamois_so_dl(int k){
-        return remplir_carre(k,m_ordre-1,(m_ordre-1)/2,1,-1,-1,0);
+    void Siamois::carre_siamois_so_dl(int pas,int k){
+        return remplir_carre(pas,k,m_ordre-1,(m_ordre-1)/2,1,-1,-1,0);
     }
 
 
     /*Siamois Sud Ouest comme départ le milieu de la première colonne*/
-    void Siamois::carre_siamois_so_pc(int k){
-        return remplir_carre(k,(m_ordre-1)/2,0,1,-1,0,1);
+    void Siamois::carre_siamois_so_pc(int pas,int k){
+        return remplir_carre(pas,k,(m_ordre-1)/2,0,1,-1,0,1);
     }
 
     /*Fonction qui trouve le chiffre de début en connaissant la constante magique*/
@@ -148,35 +148,35 @@ int Siamois::debut_carre(int c){
         int k = debut_carre(c);
 
         if (strcmp(funct.c_str(), "carre_siamois_ne_pl") == 0){
-            return carre_siamois_ne_pl(k);
+            return carre_siamois_ne_pl(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_ne_dc") == 0){
-            return carre_siamois_ne_dc(k);
+            return carre_siamois_ne_dc(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_se_dl") == 0){
-            return carre_siamois_se_dl(k);
+            return carre_siamois_se_dl(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_se_dc") == 0){
-            return carre_siamois_se_dc(k);
+            return carre_siamois_se_dc(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_no_pl") == 0){
-            return carre_siamois_no_pl(k);
+            return carre_siamois_no_pl(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_no_pc") == 0){
-            return carre_siamois_no_pc(k);
+            return carre_siamois_no_pc(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_so_dl")){
-            return carre_siamois_so_dl(k);
+            return carre_siamois_so_dl(1,k);
         }
 
         else if (strcmp(funct.c_str(), "carre_siamois_so_pc")){
-            return carre_siamois_so_pc(k);
+            return carre_siamois_so_pc(1,k);
         }
 
         else {

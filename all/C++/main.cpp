@@ -107,7 +107,7 @@ int main()
     
     cout << "carre siamois" <<endl;
     Siamois *carre2 = new Siamois(ordre);
-    carre2->carre_siamois_ne_pl(2);
+    carre2->carre_siamois_ne_pl(2,2);
     carre2->AffichageCarre();
     test = new OutilCarre(carre2->GetOrdre(), carre2->GetCarre());
     test->carre_est_magique();
