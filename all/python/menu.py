@@ -188,6 +188,10 @@ def test_predefinis():
     for j in range(n):
         print(f" {carre6[j]}")
     print(f"carre est magique : {outil_carre_magique.carre_is_magic(carre6,n)}")
+    carreother(test_predefinis, debut)
+    
+    
+    
 
 # Pour se deplacer dans le menu
 def non_ordreCarre(precedent):
@@ -204,7 +208,7 @@ def non_ordreCarre(precedent):
             print("au revoir, a bientôt")
         case other:
             print("Vous pouvez utilisé soit #, 0 ou q")
-            non_ordreCarre()
+            non_ordreCarre(precedent)
 
 
 # Pour recommencer ou non
@@ -219,7 +223,8 @@ def carreother(fonction, precedent):
         case other:
             print("soit oui ou non")
             carreother(fonction, precedent)
-
+            
+# choisir l'ordre du carre
 def ordreCarre():
     print("Choisir l'ordre du carre entre 3 à 20 sinon il n'y aura pas d'affichage du carre")
     n = input()
@@ -354,7 +359,8 @@ def algoLUX():
             for j in range(int(n)):
                 print(f" {carre[j]}")
         carreother(algoLUX,algoCarre)
-        
+
+# choisir un carre siamois
 def choixImpairOperation2(n):
         
     print("debut")
@@ -400,7 +406,8 @@ def choixImpairOperation2(n):
             print("choix doit etre entre 1 et 8 inclus")
             choixImpairOperation2(n)
     return carre
-
+    
+# choisir un carre d'ordre impair
 def choixImpairOperation(n):
         print("1: Lozenge")
         print("2 : Siamois")
