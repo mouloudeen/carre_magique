@@ -96,6 +96,47 @@ void Carre::mulVecCarre(Carre *carre){
     
 }
 
+
+/* choix des Operateurs*/
+ void Carre::choixOperateur(Carre *carre){
+    char choix;
+    
+    cout <<"1 : additionner" <<endl;
+     cout <<"2 : soustraction" <<endl;
+     cout <<"3 : multiplication" <<endl;
+     cout <<"4 : multiplication matricielle" <<endl;
+    scanf("%c", &choix);
+    
+    switch(choix){
+        case '1':
+            cout <<"Addition" <<endl;
+            addCarre(carre);
+            
+            break;
+        case '2':
+            cout <<"Soustraction" <<endl;
+            souCarre(carre);
+            
+            break;
+        case '3':
+            cout <<"Multiplication" <<endl;
+            mulCarre(carre);
+            
+            break;
+        case '4':
+            cout <<"Multiplication matricielle" <<endl;
+            mulVecCarre(carre);
+            
+            break;
+        default:
+            cout <<"Vous pouvez utilisé  1, 2, 3 et 4" <<endl;
+            choixOperateur(carre);
+    }
+    
+    
+}
+
+
 /* Getter*/
 int Carre::GetOrdre() const {
 return m_ordre;
@@ -105,26 +146,34 @@ int ** Carre::GetCarre() const {
 return m_carre;
 }
 
+/* Setter*/
+void Carre::SetCarre(int ** tab){
+    for( int i = 0; i < m_ordre; i++){
+        for( int j = 0; j < m_ordre; j++){
+            m_carre[i][j] = tab[i][j];
+        }
+    }
+}
+
 /* Affichage du carré magique*/
 void Carre::AffichageCarre(){
     for (int i = 0; i< m_ordre; i++){
-for(int j =0; j < m_ordre; j++){
-cout <<" ---";
-}
-cout << "\n";
-cout <<"| ";
-for(int j =0; j < m_ordre; j++){
-cout   <<m_carre[i][j] <<" | ";
-}
-
-cout <<"\n";
-
-
+        for(int j =0; j < m_ordre; j++){
+            printf(" ------");
+        }
+        printf("\n");
+        for(int j =0; j < m_ordre; j++){
+            printf("| %4.d ",m_carre[i][j]);
+        }
+        printf("|");
+        printf("\n");
+        
+        
     }
     for(int j =0; j < m_ordre; j++){
-cout <<" ---";
+        printf(" ------");
     }
-    cout<< "\n";
+    printf("\n");
 }
 
 /* Destructeur*/

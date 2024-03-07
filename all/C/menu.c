@@ -614,7 +614,7 @@ void choixOperation(){
         scanf("%d",&pas);
         
         carre1 = LUX(ordre, pas, debut);
-        printf("carre_permutation d'ordre %d et commence par %d avec %d\n",ordre, debut, pas);
+        printf("carre_lux d'ordre %d et commence par %d avec %d\n",ordre, debut, pas);
         carre_est_magique(carre1, ordre);
         AffichageCarre(carre1,ordre);
         
@@ -626,7 +626,7 @@ void choixOperation(){
         scanf("%d",&pas);
         
         carre2 = LUX(ordre, pas, debut);
-        printf("carre_permutation d'ordre %d et commence par %d avec %d\n",ordre, debut, pas);
+        printf("carre_lux d'ordre %d et commence par %d avec %d\n",ordre, debut, pas);
         carre_est_magique(carre2, ordre);
         AffichageCarre(carre2,ordre);
     }

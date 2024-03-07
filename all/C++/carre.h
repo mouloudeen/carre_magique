@@ -26,9 +26,15 @@ public:
     /*  multiplication comme 2 vecteurs*/
     void mulVecCarre(Carre *carre);
     
+    /* choix des Operateurs*/
+    void choixOperateur(Carre *carre);
+    
     /*Getter*/
     int GetOrdre() const;
     int ** GetCarre() const;
+    
+    /* Setter*/
+    void SetCarre(int ** tab);
 
     /* Affichage du carré magique*/
     void AffichageCarre();
