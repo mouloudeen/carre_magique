@@ -16,15 +16,20 @@ carre_magique/
 │   ├── C/
 │   ├── C++/
 │   └── Python/
-├── Impaire/                    # Ordre impair (algorithme de Siamese)
-│   ├── C/
-│   ├── C++/
-│   └── Python/
+├── Impaire/
+│   ├── carre_siamois/          # Ordre impair (méthode Siamoise)
+│   │   ├── C/
+│   │   ├── C++/
+│   │   └── Python/
+│   └── carre_lozenge/          # ordre impair (méthode du losange)
+│       ├── C/
+│       ├── C++/
+│       └── Python/
 ├── paire_impaire/LUX/          # Ordre pair non divisible par 4 (méthode LUX)
 │   ├── C/
 │   ├── C++/
 │   └── Python/
-└── paire_paire/permutation_diagonale/   # Ordre divisible par 4
+└── paire_paire/permutation_diagonale/   # Ordre divisible par 4 (méthode par la permutation diagonale)
     ├── C/
     ├── C++/
     └── Python/
@@ -37,11 +42,14 @@ Pour les versions C et C++, utiliser `make` dans le dossier concerné :
 ```bash
 cd ALL/C
 make
-./carre_magique <ordre>
+./carre
 
 cd ALL/C++
 make
-./carre_magique <ordre>
+./carre
+
+cd ALL/python
+python3 test_carre_magique.py
 ```
 
 Exemple :
@@ -58,7 +66,8 @@ python3 carre_magique.py <ordre>
 
 | Ordre | Méthode |
 |-------|---------|
-| Impair | Algorithme de Siamese (décalage en escalier) |
+| Impair | méthode siamoise  |
+| Impair | méthode du losange |
 | Pair non divisible par 4 | Méthode LUX |
 | Divisible par 4 | Permutation diagonale |
 | Tout ordre | Méthode générale (ALL) |
