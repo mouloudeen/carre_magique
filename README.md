@@ -40,26 +40,29 @@ carre_magique/
 Pour les versions C et C++, utiliser `make` dans le dossier concerné :
 
 ```bash
-cd ALL/C
+cd all/C
 make
 ./carre
 
-cd ALL/C++
+cd all/C++
 make
 ./carre
 
-cd ALL/python
-python3 test_carre_magique.py
 ```
 
 Exemple :
 ```bash
-./carre_magique 5
+./carre_magique
+1 : test manuel des carrés magiques
+2 : test avec des exemples prédéfinis des carrés magiques
+q : quitter
+_
 ```
 
 Pour Python :
 ```bash
-python3 carre_magique.py <ordre>
+cd all/python
+python3 test_carre_magique.py
 ```
 
 ## Algorithmes implémentés
