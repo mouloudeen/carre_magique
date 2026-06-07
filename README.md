@@ -53,11 +53,12 @@ make
 Exemple :
 ```bash
 ./carre_magique
+```
 1 : test manuel des carrés magiques
 2 : test avec des exemples prédéfinis des carrés magiques
 q : quitter
 _
-```
+
 
 Pour Python :
 ```bash
