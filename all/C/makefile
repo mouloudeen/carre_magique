@@ -1,7 +1,7 @@
 #Makefile des carre
 
 CC = gcc
-CFLAGS = -Wall 
+CFLAGS = #-Wall 
 LIB =
 EXEC = carre
 
