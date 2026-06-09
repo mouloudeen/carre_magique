@@ -87,7 +87,7 @@ L'affichage est limité aux ordres entre 3 et 20.
 Exemple avec un carré losange d'ordre 3 :
 
 ```
-C'est bien un carré magique d'ordre 3 #grace aux test qui prouve que c'est bien un carré magique
+C'est bien un carré magique d'ordre 3 
  ------ ------ ------
 |    8 |    3 |    4 |
  ------ ------ ------
@@ -96,6 +96,11 @@ C'est bien un carré magique d'ordre 3 #grace aux test qui prouve que c'est bien
 |    6 |    7 |    2 |
  ------ ------ ------
 ```
+> Un outil de vérification est inclus pour confirmer qu'un carré d'ordre n généré est bien magique :
+> - Vérifie que chaque ligne, colonne et diagonale ont la même somme
+> - Vérifie que tous les entiers de 1 à N² sont présents 
+> - La réponse positif : C'est bien un carré magique d'ordre n
+> - La réponse négative : Ce n'est pas un carré magique d'ordre n
 
 **Option 2 — Choisir l'algorithme**
 
