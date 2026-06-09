@@ -87,7 +87,7 @@ L'affichage est limité aux ordres entre 3 et 20.
 Exemple avec un carré losange d'ordre 3 :
 
 ```
-C'est bien un carré magique d'ordre 3
+C'est bien un carré magique d'ordre 3 #grace aux test qui prouve que c'est bien un carré magique
  ------ ------ ------
 |    8 |    3 |    4 |
  ------ ------ ------
@@ -113,7 +113,7 @@ q : quitter
 Exemple avec carré losange d'ordre 5 :
 
 ```
-C'est bien un carré magique d'ordre 5
+C'est bien un carré magique d'ordre 5 
  ------ ------ ------ ------ ------
 |   18 |   24 |    5 |    6 |   12 |
  ------ ------ ------ ------ ------
